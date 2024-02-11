@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,700;1,300&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    html,
+    body {
+      height: 100%;
+      background-color: hsl(0, 0%, 0%);
+      /* Black */
+      color: hsl(0, 0%, 100%);
+      /* White */
+    }
+
+    .round-corner {
+      border-radius: 15px;
+    }
+
+    .card {
+      background-color: hsl(216, 12%, 15%);
+      /* Dark blue */
+      width: 22rem;
+    }
+
+    .card-title {
+      font-family: 'Overpass', sans-serif;
+      font-weight: 700;
+      color: hsl(0, 0%, 100%);
+      /* White */
+      font-size: 23px;
+    }
+
+    .card-text {
+      font-family: 'Overpass', sans-serif;
+      font-weight: 400;
+      color: hsl(217, 12%, 63%);
+      /* Light gray */
+      font-size: 15px;
+    }
+
+    .circle {
+      background-color: hsl(213, 19%, 18%);
+      /* Dark Blue */
+      width: 45px;
+      height: 45px;
+      border-radius: 50px;
+    }
+
+    .oval {
+      background-color: hsl(25, 97%, 53%);
+      /* Orange */
+      width: 100%;
+      height: 45px;
+      border-radius: 50px;
+    }
+
+    .oval2 {
+      background-color: hsl(213, 19%, 18%);
+      width: 190px;
+      height: 35px;
+      border-radius: 50px;
+      color: hsl(25, 97%, 53%);
+    }
+
+    .selection {
+      color: hsl(217, 12%, 63%);
+      /* Light gray */
+      border: none;
+    }
+
+    .selection:hover {
+      background-color: hsl(25, 97%, 53%);
+      color: hsl(0, 0%, 100%);
+    }
+
+    .selection:active {
+      background-color: hsl(217, 12%, 63%);
+    }
+
+    .selection:focus {
+      background-color: hsl(217, 12%, 63%);
+      color: hsl(0, 0%, 100%);
+      outline: none;
+    }
+
+    .btn {
+      color: hsl(0, 0%, 100%);
+      border: none;
+      font-family: 'Overpass', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+
+    .btn:hover {
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(25, 97%, 53%);
+    }
+
+    .btn:active {
+      background-color: hsl(0, 0%, 100%);
+    }
+
+    .btn:focus {
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(25, 97%, 53%);
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Card 1 -->
+  <div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="card p-2 round-corner">
+      <div class="d-flex align-items-center justify-content-center mt-3 mx-3 circle">
+        <img src="images/icon-star.svg" alt="Star icon">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">How did we do?</h5>
+        <p class="card-text mt-3">Please let us know how we did with your support request. All feedback is appreciated
+          to help us improve our offering!</p>
+
+        <div class="list-inline my-4 d-flex justify-content-between justify-content">
+          <button class="selection circle" value="1">1</button>
+          <button class="selection circle" value="2">2</button>
+          <button class="selection circle" value="3">3</button>
+          <button class="selection circle" value="4">4</button>
+          <button class="selection circle" value="5">5</button>
+        </div>
+
+        <a href="#thanks"><button class="btn oval">SUBMIT</button></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div id="thanks" class="h-100 d-flex align-items-center justify-content-center">
+    <div class="card p-2 round-corner">
+      <div class="text-center my-3">
+        <img src="images/illustration-thank-you.svg" alt="Ilustration">
+      </div>
+      <div class="card-body">
+        <!-- Rating state start -->
+        <div class="d-flex align-items-center justify-content-center">
+          <p class="d-flex align-items-center justify-content-center oval2"><span id="result"></span>
+          </p>
+        </div>
+        <div class="text-center my-3">
+          <h5 class="card-title">Thank you! </h5>
+
+          <p class="card-text">We appreciate you taking the time to give a rating. If you ever need
+            more support,
+            don’t hesitate to get in touch!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let buttonList = document.querySelectorAll(".selection");
+    buttonList.forEach(function (i) {
+      i.addEventListener("click", function (e) {
+        x = "You selected  " + e.target.innerHTML + "  out of 5";
+        document.getElementById("result").innerHTML = x;
+      })
+    })
+  </script>
+
+
+
+</body>
+
+</html>
